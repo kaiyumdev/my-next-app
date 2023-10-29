@@ -1,14 +1,17 @@
-import { Button } from "antd";
-import Link from "next/link";
-import RootLayout from "../components/Layouts/RootLayout";
+import RootLayout from "@/components/Layouts/RootLayout";
+import Head from "next/head";
 
 const HomePage = () => {
   return (
     <div>
-      <h1>Welcome to news page</h1>
-      <Button type="primary">
-        <Link href="/">Home</Link>
-      </Button>
+      <Head>
+        <title>Next Home Page</title>
+        <meta
+          name="home page"
+          description="this page is created by next js"
+        ></meta>
+      </Head>
+      <h1>This is Home Page</h1>
     </div>
   );
 };
