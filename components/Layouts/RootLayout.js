@@ -1,7 +1,11 @@
+import React from "react";
 import { Breadcrumb, Layout, Menu, theme } from "antd";
 const { Header, Content, Footer } = Layout;
 
-const RootLayout = () => {
+const RootLayout = ({ children }) => {
+  const {
+    token: { colorBgContainer },
+  } = theme.useToken();
   return (
     <Layout className="layout">
       <Header
@@ -42,9 +46,10 @@ const RootLayout = () => {
           className="site-layout-content"
           style={{
             background: colorBgContainer,
+            height: "100vh",
           }}
         >
-          Content
+          {children}
         </div>
       </Content>
       <Footer
@@ -57,5 +62,4 @@ const RootLayout = () => {
     </Layout>
   );
 };
-
 export default RootLayout;
